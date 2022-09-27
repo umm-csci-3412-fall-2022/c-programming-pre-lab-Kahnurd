@@ -43,6 +43,7 @@ char const *strip(char const *str) {
   // Place the null terminator at the end of the result string.
   result[i-first_non_space] = '\0';
 
+
   return result;
 }
 
@@ -60,6 +61,10 @@ int is_clean(char const *str) {
   // 0 if they're equal, and a positive value if the first is
   // greater than the second.
   int result = strcmp(str, cleaned);
+
+  if(strlen(cleaned) > 0){
+  free((char*)cleaned);
+  }
 
   return result == 0;
 }
